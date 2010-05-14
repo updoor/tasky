@@ -29,9 +29,12 @@ USE_I18N = False
 DEFAULT_LANG = 'en'
 
 INSTALLED_APPS = (
+  'kay.auth',
+  'tasky',
 )
 
 APP_MOUNT_POINTS = {
+  'tasky': '/',
 }
 
 # You can remove following settings if unnecessary.
@@ -40,3 +43,11 @@ CONTEXT_PROCESSORS = (
   'kay.context_processors.url_functions',
   'kay.context_processors.media_url',
 )
+
+MIDDLEWARE_CLASSES = (
+  'kay.sessions.middleware.SessionMiddleware',
+  'kay.auth.middleware.AuthenticationMiddleware',
+)
+AUTH_USER_BACKEND = 'kay.auth.backends.googleaccount.GoogleBackend'
+AUTH_USER_MODEL = 'kay.auth.models.GoogleUser'
+
