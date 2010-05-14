@@ -1,1 +1,1 @@
-/www/updoor/kay/manage.py
+../kay/manage.py
