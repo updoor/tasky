@@ -1,0 +1,1 @@
+/www/updoor/kay/manage.py
